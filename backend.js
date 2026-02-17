@@ -88,16 +88,12 @@ document.addEventListener("DOMContentLoaded", function () {
             if (data.match) {
                 // IT'S A CHRISTMAS MATCH!!!
                 const dateIdeas = [
-                    "Midnight filter coffee under fairy lights",
-                    "Secret Santa gift exchange at a cafe",
-                    "Christmas movie marathon with cuddles",
-                    "Walk through decorated streets holding hands",
-                    "Ice-skating + hot chocolate date"
+                   //nthelum okke pinne add cheyam 
                 ];
                 const idea = dateIdeas[Math.floor(Math.random() * dateIdeas.length)];
 
                 resultDiv.innerHTML = `
-                    <div style="font-size:3.8rem;animation:pulse 2s infinite;">IT'S A MATCH!</div>
+                    <div style="font-size:3.8rem;animation:pulse 2s infinite;">//aaaaaaahhhhh</div>
                     <div style="font-size:2.5rem;margin:15px 0;">${raw1.split(" ")[0]} + ${raw2.split(" ")[0]}</div>
                     <div style="font-size:4.5rem;color:#ff1744;margin:10px 0;">${percentage}% ${meanings[result]}</div>
                     <div style="background:#FFD700;color:#d32f2f;padding:20px;border-radius:15px;margin:20px 0;font-size:1.4rem;">
@@ -117,14 +113,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Normal result
                 resultDiv.innerHTML = `
                     <div style="font-size:2.8rem;margin-bottom:10px;">${meanings[result]}</div>
-                    <div style="font-size:4.5rem;color:#e91e63;">${percentage}%</div>
-                    <div style="margin-top:15px;font-size:1.3rem;">
-                        Send this link to <b>${raw2.split(" ")[0]}</b> and pray they search you back before Christmas!
-                    </div>
-                `;
+                    <div style="font-size:4.5rem;color:#e91e63;">${percentage}%</div>`;
             }
         } catch (err) {
-            resultDiv.innerHTML = `<div style="color:#ff5252;">Network error — try again!</div>`;
+            resultDiv.innerHTML = `<div><p style ="color:#ff5252; ">servers are down for now !</p> aallelum valiya karyam onnumilla , situationship . koodi poya athrem , avasanam nii karayum mone </div>`;
         }
     });
 });
