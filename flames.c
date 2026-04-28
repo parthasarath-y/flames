@@ -64,7 +64,6 @@ const char* verdict(char lett) {
         default:  return "Unknown";
     }
 }
-
 int main() {
     char name1[30], name2[30];
     printf("Enter your name: ");
