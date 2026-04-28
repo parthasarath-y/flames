@@ -2,7 +2,6 @@
 #include <string.h>
 #include <ctype.h>
 
-
 int name_count(char str1[], char str2[]) {
     int len1 = strlen(str1);
     int len2 = strlen(str2);
