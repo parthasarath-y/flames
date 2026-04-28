@@ -118,6 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } catch (err) {
             resultDiv.innerHTML = `<div><p style ="color:#ff5252; ">servers are down for now !</p> aallelum valiya karyam onnumilla , situationship . koodi poya athrem , avasanam nii karayum mone </div>`;
         }
+   
     });
+
 });
-#commit

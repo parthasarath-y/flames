@@ -2,6 +2,7 @@
 #include <string.h>
 #include <ctype.h>
 
+
 int name_count(char str1[], char str2[]) {
     int len1 = strlen(str1);
     int len2 = strlen(str2);
@@ -22,7 +23,6 @@ int name_count(char str1[], char str2[]) {
       } 
   return (len1 + len2) - common;
 }
-
 int result_letter(int count) {
     char flames[] = "FLAMES",final_letter;
     int fc = 6, pos = 0;
@@ -44,7 +44,6 @@ int result_letter(int count) {
             pos++;
         }
     }
-
     for (int i = 0; i < fc; i++) {
         if (flames[i] != 'X') {
             final_letter=flames[i];
@@ -65,7 +64,6 @@ const char* verdict(char lett) {
         default:  return "Unknown";
     }
 }
-
 int main() {
     char name1[30], name2[30];
     printf("Enter your name: ");
