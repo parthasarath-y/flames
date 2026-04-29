@@ -1,17 +1,3 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const form = document.querySelector("form");
-    const resultDiv = document.createElement("div");
-    resultDiv.id = "result";
-    resultDiv.style.cssText = `
-        margin-top: 20px; padding: 25px; border-radius: 15px; text-align: center;
-        background: rgba(0,0,0,0.5); color: white; font-family: 'Poppins', sans-serif;
-        backdrop-filter: blur(10px); border: 2px solid rgba(255,255,255,0.2);
-    `;
-    form.after(resultDiv);
-
-    form.addEventListener("submit", async function (e) {
-        e.preventDefault();
-
         let raw1 = document.querySelectorAll("input")[0].value.trim();
         let raw2 = document.querySelectorAll("input")[1].value.trim();
 
@@ -23,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let a = raw1.toLowerCase().replace(/ /g, "");
         let b = raw2.toLowerCase().replace(/ /g, "");
 
-        // === YOUR ORIGINAL FLAMES LOGIC (unchanged) ===
+      
         let s1 = a.split("");
         let s2 = b.split("");
 
@@ -74,50 +60,3 @@ document.addEventListener("DOMContentLoaded", function () {
             "F": "Friends", "L": "Lovers", "A": "Affection",
             "M": "Marriage", "E": "Enemy", "S": "Siblings"
         };
-
-        // === SEND TO PHP + CHECK FOR MATCH ===
-        try {
-            const response = await fetch("save.php", {
-                method: "POST",
-                headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: `name1=${encodeURIComponent(raw1)}&name2=${encodeURIComponent(raw2)}&result=${result}&percentage=${percentage}`
-            });
-
-            const data = await response.json();
-
-            if (data.match) {
-                // IT'S A CHRISTMAS MATCH!!!
-                const dateIdeas = [
-                   //nthelum okke pinne add cheyam 
-                ];
-                const idea = dateIdeas[Math.floor(Math.random() * dateIdeas.length)];
-
-                resultDiv.innerHTML = `
-                    <div style="font-size:3.8rem;animation:pulse 2s infinite;">//aaaaaaahhhhh</div>
-                    <div style="font-size:2.5rem;margin:15px 0;">${raw1.split(" ")[0]} + ${raw2.split(" ")[0]}</div>
-                    <div style="font-size:4.5rem;color:#ff1744;margin:10px 0;">${percentage}% ${meanings[result]}</div>
-                    <div style="background:#FFD700;color:#d32f2f;padding:20px;border-radius:15px;margin:20px 0;font-size:1.4rem;">
-                        They searched you <b>${data.minutes_ago} minutes ago</b>!<br><br>
-                        Secret Christmas Date Idea:<br><b>${idea}</b>
-                    </div>
-                    <div style="font-size:1.3rem;margin-top:15px;">
-                        Share this link — they’ll see the magic too
-                    </div>
-                `;
-
-                // Fireworks background
-                document.body.style.background = "linear-gradient(45deg, #ff9a9e, #fad0c4, #fad0c4, #a18cd1)";
-                document.body.style.backgroundSize = "400% 400%";
-                document.body.style.animation = "gradient 8s ease infinite";
-            } else {
-                // Normal result
-                resultDiv.innerHTML = `
-                    <div style="font-size:2.8rem;margin-bottom:10px;">${meanings[result]}</div>
-                    <div style="font-size:4.5rem;color:#e91e63;">${percentage}%</div>`;
-            }
-        } catch (err) {
-            resultDiv.innerHTML = `<div><p style ="color:#ff5252; ">servers are down for now !</p> aallelum valiya karyam onnumilla , situationship . koodi poya athrem , avasanam nii karayum mone </div>`;
-        }
-   
-    });
-});
