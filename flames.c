@@ -26,7 +26,7 @@ int result_letter(int count) {
     char flames[] = "FLAMES",final_letter;
     int fc = 6, pos = 0;
 
-    if (count == 0) return 'F';
+    if (count == 0) return "onn podey";
 
     for (int i = 0; i < 5; i++) {
         int step = 0;
